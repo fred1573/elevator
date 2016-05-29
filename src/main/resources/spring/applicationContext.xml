@@ -36,7 +36,7 @@
     <beans profile="dev">
         <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
             <property name="url" value="jdbc:mysql://localhost:3306/elevator" />
-            <property name="username" value="admin" />
+            <property name="username" value="root" />
             <property name="password" value="admin" />
             <!-- 初始化连接大小 -->
             <property name="initialSize" value="1" />

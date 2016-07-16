@@ -39,7 +39,6 @@ import org.springframework.util.Assert;
  * @param <T> DAO操作的对象类型
  * @param <PK> 主键类型
  * 
- * @author mowei
  */
 public class HibernateDao<T, PK extends Serializable> extends SimpleHibernateDao<T, PK> {
 	

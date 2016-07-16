@@ -12,7 +12,6 @@ import java.util.List;
  * 
  * @param <T> Page中记录的类型.
  * 
- * @author mowei
  */
 public class Page<T> {
 	//-- 公共变量 --//

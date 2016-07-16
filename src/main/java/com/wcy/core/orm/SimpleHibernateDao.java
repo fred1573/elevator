@@ -37,7 +37,6 @@ import java.util.Map;
  * @param <T> DAO操作的对象类型
  * @param <PK> 主键类型
  * 
- * @author mowei
  */
 @SuppressWarnings("unchecked")
 public class SimpleHibernateDao<T, PK extends Serializable> {

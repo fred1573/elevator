@@ -1,18 +1,18 @@
---ÓÃ»§±í
+--ç”¨æˆ·è¡¨
 CREATE TABLE `ele_user_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Ö÷¼ü',
-  `login_name` varchar(20) NOT NULL COMMENT 'µÇÂ¼ÕËºÅ',
-  `login_password` varchar(20) NOT NULL COMMENT 'µÇÂ¼ÃÜÂë',
-  `user_name` varchar(20) NOT NULL COMMENT 'ĞÕÃû',
-  `email` varchar(20) DEFAULT NULL COMMENT 'ÓÊÏä',
-  `department_id` int(11) DEFAULT NULL COMMENT 'ËùÔÚ²¿ÃÅ',
-  `last_login_time` varchar(19) DEFAULT NULL COMMENT '×îºóµÇÂ¼Ê±¼ä',
-  `status` tinyint(4) NOT NULL COMMENT 'ÕËºÅ×´Ì¬',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ä¸»é”®',
+  `login_name` varchar(20) NOT NULL COMMENT 'ç™»å½•è´¦å·',
+  `login_password` varchar(20) NOT NULL COMMENT 'ç™»å½•å¯†ç ',
+  `user_name` varchar(20) NOT NULL COMMENT 'å§“å',
+  `email` varchar(20) DEFAULT NULL COMMENT 'é‚®ç®±',
+  `department_id` int(11) DEFAULT NULL COMMENT 'æ‰€åœ¨éƒ¨é—¨',
+  `last_login_time` varchar(19) DEFAULT NULL COMMENT 'æœ€åç™»å½•æ—¶é—´',
+  `status` tinyint(4) NOT NULL COMMENT 'è´¦å·çŠ¶æ€',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
---ÖĞ¼ä±í£¨ÓÃ»§-½ÇÉ«£©
+--ä¸­é—´è¡¨ï¼ˆç”¨æˆ·-è§’è‰²ï¼‰
 CREATE TABLE `ele_user_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -20,14 +20,14 @@ CREATE TABLE `ele_user_role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---½ÇÉ«±í
+--è§’è‰²è¡¨
 CREATE TABLE `ele_role` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Ö÷¼ü',
-  `name` varchar(20) NOT NULL COMMENT '½ÇÉ«Ãû³Æ',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ä¸»é”®',
+  `name` varchar(20) NOT NULL COMMENT 'è§’è‰²åç§°',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---ÖĞ¼ä±í£¨½ÇÉ«-×ÊÔ´£©
+--ä¸­é—´è¡¨ï¼ˆè§’è‰²-èµ„æºï¼‰
 CREATE TABLE `ele_role_resource` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) NOT NULL,
@@ -35,83 +35,73 @@ CREATE TABLE `ele_role_resource` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---×ÊÔ´±í
+--èµ„æºè¡¨
 CREATE TABLE `ele_resource` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Ö÷¼ü',
-  `name` varchar(20) DEFAULT NULL COMMENT '×ÊÔ´Ãû³Æ',
-  `url` varchar(20) DEFAULT NULL COMMENT '×ÊÔ´urlµØÖ·',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ä¸»é”®',
+  `name` varchar(20) DEFAULT NULL COMMENT 'èµ„æºåç§°',
+  `url` varchar(20) DEFAULT NULL COMMENT 'èµ„æºurlåœ°å€',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---ºÏÍ¬±í
+--åˆåŒè¡¨
 CREATE TABLE `ele_contract_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `contract_no` varchar(20) NOT NULL COMMENT 'ºÏÍ¬±àºÅ',
-  `part_a` varchar(20) NOT NULL COMMENT '¼×·½Ãû³Æ',
-  `part_b` varchar(20) NOT NULL COMMENT 'ÒÒ·½Ãû³Æ',
-  `start_time` varchar(20) NOT NULL COMMENT 'ºÏÍ¬Ç©¶©Ê±¼ä',
-  `end_time` varchar(20) NOT NULL COMMENT 'ºÏÍ¬µ½ÆÚÊ±¼ä',
-  `audit_name` varchar(20) DEFAULT NULL COMMENT 'ÉóºËÈË',
-  `plan_id` int(11) DEFAULT NULL COMMENT 'ºÏÍ¬¶ÔÓ¦¼Æ»®±íid',
-  `summary` varchar(255) DEFAULT NULL COMMENT 'ºÏÍ¬ÕªÒª',
-  `status` tinyint(4) NOT NULL COMMENT 'ºÏÍ¬×´Ì¬:0-Ê§Ğ§£»1-ÉúĞ§£»2-×÷·Ï',
+  `contract_no` varchar(20) NOT NULL COMMENT 'åˆåŒç¼–å·',
+  `part_a` varchar(20) NOT NULL COMMENT 'ç”²æ–¹åç§°',
+  `part_b` varchar(20) NOT NULL COMMENT 'ä¹™æ–¹åç§°',
+  `start_time` varchar(20) NOT NULL COMMENT 'åˆåŒç­¾è®¢æ—¶é—´',
+  `end_time` varchar(20) NOT NULL COMMENT 'åˆåŒåˆ°æœŸæ—¶é—´',
+  `audit_name` varchar(20) DEFAULT NULL COMMENT 'å®¡æ ¸äºº',
+  `plan_id` int(11) DEFAULT NULL COMMENT 'åˆåŒå¯¹åº”è®¡åˆ’è¡¨id',
+  `summary` varchar(255) DEFAULT NULL COMMENT 'åˆåŒæ‘˜è¦',
+  `status` tinyint(4) NOT NULL COMMENT 'åˆåŒçŠ¶æ€:0-å¤±æ•ˆï¼›1-ç”Ÿæ•ˆï¼›2-ä½œåºŸ',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---¼Æ»®±í
+--è®¡åˆ’è¡¨
 CREATE TABLE `ele_plan_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT NULL COMMENT '¼Æ»®Ãû³Æ',
-  `content` varchar(255) DEFAULT NULL COMMENT '¼Æ»®ÄÚÈİ',
-  `start_time` varchar(20) DEFAULT NULL COMMENT '¼Æ»®¿ªÊ¼Ê±¼ä',
+  `name` varchar(20) DEFAULT NULL COMMENT 'è®¡åˆ’åç§°',
+  `content` varchar(255) DEFAULT NULL COMMENT 'è®¡åˆ’å†…å®¹',
+  `start_time` varchar(20) DEFAULT NULL COMMENT 'è®¡åˆ’å¼€å§‹æ—¶é—´',
   `end_time` varchar(20) DEFAULT NULL,
-  `excutor_id` int(11) DEFAULT NULL COMMENT '¼Æ»®ÊµÊ©ÈË',
-  `ruler_id` int(11) DEFAULT NULL COMMENT '¼Æ»®ÖÆ¶¨ÈË',
-  `audit_status` tinyint(4) DEFAULT NULL COMMENT 'ÉóºË½á¹û£º0-µÈ´ıÉóºË£»1-Í¨¹ı£»2-²µ»Ø',
-  `audit_id` int(11) DEFAULT NULL COMMENT 'ÉóºËÈË',
-  `audit_time` varchar(20) DEFAULT NULL COMMENT 'ÉóºËÊ±¼ä',
-  `audit_suggestion` varchar(40) DEFAULT NULL COMMENT 'ÉóºËÒâ¼û',
-  `status` tinyint(4) DEFAULT NULL COMMENT '¼Æ»®×´Ì¬£º0-Î´¿ªÊ¼£»1-Ö´ĞĞÖĞ£»2-ÒÑÍê³É£»3-Î´Íê³É',
+  `excutor_id` int(11) DEFAULT NULL COMMENT 'è®¡åˆ’å®æ–½äºº',
+  `ruler_id` int(11) DEFAULT NULL COMMENT 'è®¡åˆ’åˆ¶å®šäºº',
+  `audit_status` tinyint(4) DEFAULT NULL COMMENT 'å®¡æ ¸ç»“æœï¼š0-ç­‰å¾…å®¡æ ¸ï¼›1-é€šè¿‡ï¼›2-é©³å›',
+  `audit_id` int(11) DEFAULT NULL COMMENT 'å®¡æ ¸äºº',
+  `audit_time` varchar(20) DEFAULT NULL COMMENT 'å®¡æ ¸æ—¶é—´',
+  `audit_suggestion` varchar(40) DEFAULT NULL COMMENT 'å®¡æ ¸æ„è§',
+  `status` tinyint(4) DEFAULT NULL COMMENT 'è®¡åˆ’çŠ¶æ€ï¼š0-æœªå¼€å§‹ï¼›1-æ‰§è¡Œä¸­ï¼›2-å·²å®Œæˆï¼›3-æœªå®Œæˆ',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---µçÌİĞÅÏ¢±í
+--ç”µæ¢¯ä¿¡æ¯è¡¨
 CREATE TABLE `ele_elevator_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Ö÷¼ü',
-  `elevator_no` varchar(20) DEFAULT NULL COMMENT 'µçÌİ±àºÅ',
-  `address` varchar(40) DEFAULT NULL COMMENT 'µçÌİÎ»ÖÃ',
-  `manufacturer` varchar(20) DEFAULT NULL COMMENT 'Éú²ú¹«Ë¾',
-  `delivery_time` varchar(20) DEFAULT NULL COMMENT '³ö³§Ê±¼ä',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ä¸»é”®',
+  `elevator_no` varchar(20) DEFAULT NULL COMMENT 'ç”µæ¢¯ç¼–å·',
+  `address` varchar(40) DEFAULT NULL COMMENT 'ç”µæ¢¯ä½ç½®',
+  `manufacturer` varchar(20) DEFAULT NULL COMMENT 'ç”Ÿäº§å…¬å¸',
+  `delivery_time` varchar(20) DEFAULT NULL COMMENT 'å‡ºå‚æ—¶é—´',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---¹ÊÕÏ±í
+--æ•…éšœè¡¨
 CREATE TABLE `ele_trouble_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Ö÷¼ü',
-  `elevator_no` varchar(20) NOT NULL COMMENT 'µçÌİ±àºÅ',
-  `desc` varchar(255) DEFAULT NULL COMMENT '¹ÊÕÏÃèÊö',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ä¸»é”®',
+  `elevator_no` varchar(20) NOT NULL COMMENT 'ç”µæ¢¯ç¼–å·',
+  `desc` varchar(255) DEFAULT NULL COMMENT 'æ•…éšœæè¿°',
   `reason` varchar(255) DEFAULT NULL,
-  `start_time` varchar(20) DEFAULT NULL COMMENT '¹ÊÕÏ·¢ÉúÊ±¼ä',
-  `end_time` varchar(20) DEFAULT NULL COMMENT '¹ÊÕÏ´¦ÀíÍê³ÉÊ±¼ä',
+  `start_time` varchar(20) DEFAULT NULL COMMENT 'æ•…éšœå‘ç”Ÿæ—¶é—´',
+  `end_time` varchar(20) DEFAULT NULL COMMENT 'æ•…éšœå¤„ç†å®Œæˆæ—¶é—´',
   `excutor_id` int(11) DEFAULT NULL,
-  `level_id` int(11) DEFAULT NULL COMMENT '¹ÊÕÏµÈ¼¶',
-  `status` tinyint(4) DEFAULT NULL COMMENT '¹ÊÕÏ×´Ì¬£º0-Î´´¦Àí£»1.ÒÑ´¦Àí£»2-´¦ÀíÖĞ',
+  `level_id` int(11) DEFAULT NULL COMMENT 'æ•…éšœç­‰çº§',
+  `status` tinyint(4) DEFAULT NULL COMMENT 'æ•…éšœçŠ¶æ€ï¼š0-æœªå¤„ç†ï¼›1.å·²å¤„ç†ï¼›2-å¤„ç†ä¸­',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---¹ÊÕÏµÈ¼¶±í
+--æ•…éšœç­‰çº§è¡¨
 CREATE TABLE `ele_trouble_level` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Ö÷¼ü',
-  `name` varchar(20) DEFAULT NULL COMMENT '¹ÊÕÏµÈ¼¶',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ä¸»é”®',
+  `name` varchar(20) DEFAULT NULL COMMENT 'æ•…éšœç­‰çº§',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-
-
-
-
-
-
-
